@@ -3,10 +3,11 @@
 import FavoritesTable from '@/components/products/FavoritesTable'
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react';
+import { selectFavoriteProducts } from '@/src/store/favorites/favoritesSlice';
 
 export default function Favorites() {
 
-  const favoriteProducts = useSelector( state => Object.values(state.favorites) );
+  const favoriteProducts = useSelector( selectFavoriteProducts );
   const [products, setProducts] = useState(favoriteProducts);
 
   console.log(products);
@@ -14,7 +15,7 @@ export default function Favorites() {
   return (
     <main className="w-full h-full max-w-[1920px] mx-auto bg-gray-50 p-4">
       
-      <FavoritesTable products={favoriteProducts} />
+      <FavoritesTable products={products} />
         
     </main>
   )

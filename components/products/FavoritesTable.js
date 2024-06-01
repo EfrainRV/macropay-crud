@@ -3,7 +3,7 @@ import Link from "next/link";
 import DeleteButton from "../ui/DeleteButton";
 import ToggleFavorite from "./ToggleFavorite";
 
-export default async function FavoritesTable( {products} ) {
+export default function FavoritesTable( {products} ) {
   return (
     <div className="mt-10 min-w-full py-2 sm:px-6 lg:px-8 bg-white p-5 overflow-x-auto">
       <table className="min-w-full divide-y divide-gray-300 ">

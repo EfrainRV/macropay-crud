@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { createSelector } from 'reselect'
 
 const initialState = {
   /* '44': { id: 44, name: 'Product 1', price: 100, color: 'Negro' },
@@ -26,5 +27,10 @@ export const favoritesSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { toggleFavorite } = favoritesSlice.actions
+
+export const selectFavoriteProducts = createSelector(
+  state => state.favorites,
+  favorites => Object.values(favorites)
+);
 
 export default favoritesSlice.reducer
